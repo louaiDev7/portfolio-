@@ -6,26 +6,26 @@ const projects = [
     name: "Portfolio Website",
     description: "Personal portfolio built with React — showcasing projects, skills, and contact info with smooth scroll navigation and a cohesive dark design system.",
     tags: ["React", "CSS", "Vite"],
-    live: "#",
+    live: "https://portfolio-pi-khaki-30.vercel.app/",
     github: "#",
     index: "01",
   },
-  {
-    name: "Todo App",
-    description: "A clean task management app with local storage persistence, drag-to-reorder, priority labels, and filtering — built for speed and simplicity.",
-    tags: ["React", "localStorage", "JS"],
-    live: "#",
+ {
+    name: "Rock Paper Game",
+    description: "A fun and interactive Rock-Paper-Scissors game built with React. Features smooth gameplay, responsive design, and local score tracking for an engaging experience.",
+    tags: ["React", "JavaScript", "Game"],
+    live: "https://rock-papper-six.vercel.app/",
     github: "#",
     index: "02",
-  },
-  {
-    name: "Weather App",
-    description: "Real-time weather forecast app with location-based detection, 5-day outlook, and animated condition icons — powered by OpenWeatherMap API.",
-    tags: ["React", "REST API", "Geolocation"],
-    live: "#",
-    github: "#",
-    index: "03",
-  },
+},
+{
+  name: "L_7-store",
+  description: "Online shop featuring curated products across categories with real-time cart updates, secure checkout, and an intuitive, responsive design — powered by DummyJSON API.",
+  tags: ["React", "REST API", "E-commerce"],
+  live: "#https://store-l-7.vercel.app/",
+  github: "#",
+  index: "03",
+},
 ];
 
 function ProjectCard({ project, i }) {
@@ -74,7 +74,7 @@ function ProjectCard({ project, i }) {
         transition: "background 0.4s ease",
       }} />
 
-      {/* Corner number */}
+     
       <span style={{
         position: "absolute",
         top: "28px",
@@ -88,7 +88,7 @@ function ProjectCard({ project, i }) {
         {project.index}
       </span>
 
-      {/* Title */}
+     
       <h3 style={{
         fontFamily: "'Syne', sans-serif",
         fontSize: "20px",
@@ -114,7 +114,7 @@ function ProjectCard({ project, i }) {
         {project.description}
       </p>
 
-      {/* Tags */}
+     
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "28px" }}>
         {project.tags.map((tag) => (
           <span key={tag} style={{
@@ -134,7 +134,7 @@ function ProjectCard({ project, i }) {
         ))}
       </div>
 
-      {/* Divider */}
+   
       <div style={{
         height: "1px",
         background: "rgba(255,255,255,0.06)",
