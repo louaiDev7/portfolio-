@@ -10,7 +10,7 @@ const socials = [
 export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle"); 
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
 
@@ -23,17 +23,30 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) { setStatus("error"); return; }
-    setStatus("loading");
-    setTimeout(() => {
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!email || !email.includes("@")) { setStatus("error"); return; }
+  setStatus("loading");
+
+  try {
+    const res = await fetch("https://formspree.io/f/mqedodky", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ email, message }),
+    });
+
+    if (res.ok) {
       setStatus("success");
       setEmail("");
       setMessage("");
       setTimeout(() => setStatus("idle"), 3500);
-    }, 1500);
-  };
+    } else {
+      setStatus("error");
+    }
+  } catch {
+    setStatus("error");
+  }
+};
 
   const isDisabled = status === "loading" || status === "success";
 
