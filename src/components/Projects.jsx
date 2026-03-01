@@ -22,7 +22,7 @@ const projects = [
   name: "L_7-store",
   description: "Online shop featuring curated products across categories with real-time cart updates, secure checkout, and an intuitive, responsive design — powered by DummyJSON API.",
   tags: ["React", "REST API", "E-commerce"],
-  live: "#https://store-l-7.vercel.app/",
+  live: "https://store-l-7.vercel.app/",
   github: "#",
   index: "03",
 },
